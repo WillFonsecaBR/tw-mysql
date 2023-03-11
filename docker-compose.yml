@@ -1,6 +1,4 @@
-version: '3.5'
-
-
+version: '3.8'
 services:
   # SERVIDOR MYSQL
   mysql:
@@ -12,24 +10,24 @@ services:
       - 3306:3306
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=twmysql2022
-      - MYSQL_USER=willian
-      - MYSQL_PASSWORD=will2022
-      - MYSQL_DATABASE=tw-mysql-curso
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_USER=
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=
     volumes:
       - db-volumes:/var/lib/mysql
     networks:
       - tw-mysql-network
 
 
-  adminer:
-    image: adminer
-    container_name: adminer
-    restart: always
-    ports:
-      - 8080:8080
-    networks:
-      - tw-mysql-network
+  # adminer:
+  #   image: adminer
+  #   container_name: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - tw-mysql-network
 
 
 volumes:
